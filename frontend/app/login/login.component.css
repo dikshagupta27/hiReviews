@@ -1,0 +1,181 @@
+body 
+{
+    padding-top:40px;
+}
+.container
+{
+    margin-top: 0px;
+}
+fieldset 
+{
+    /* border: thin solid #ccc;  */
+    border-radius: 4px;
+    padding: 20px;
+    padding-left: 90px;
+    /* padding-top: 390px; */
+    /* background: #fbfbfb; */
+}
+
+.form-control 
+{
+    width: 900%;
+}
+.imgg
+{
+    height: 150px;
+    margin-top: 0px;
+
+}
+.signup-image-link
+{
+    font-size: 20px;
+    color: #222;
+    display: block;
+    font-family: 'Peaches&Cream';
+    text-align: center;
+    margin-left: 10px;
+}
+   
+.signup-image 
+{
+   
+  margin-left: 10px;
+  margin-top:250px ;
+  height: 300px;
+}
+.footer-social-icons
+{
+    width:100%;
+    height: 30px;
+    margin:auto; 
+    /* margin-left: 0px; */
+}
+.footer-social-icons ul
+{
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+.footer-social-icons ul li
+{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin: 0px 10px;
+  border-radius: 100%;
+  /* background-color:beige; */
+}
+#kk
+{
+  margin-left: 10px;
+  width: 150px;
+    /* line-height: 60px;
+    font-size: 20px; */
+}
+#kk:hover
+{
+  background:none ;
+}
+.footer-social-icons ul li a
+{
+  columns: #272727;
+  font-size:30px;
+  display: block;
+            /* background-color:black; */
+}
+.footer-social-icons ul li a i
+{
+  line-height: 60px;
+}
+.footer-social-icons ul li:hover
+{
+  background:pink ;
+}
+.footer-social-icons ul li:hover a
+{
+  /* color: #ffffff; */
+  color:accent;
+}
+.img2
+{
+  height: 500px; 
+}
+.input1
+{
+  font-size: large;
+}
+.mat-input-wrapper
+{
+  width:800px !important;
+}
+.mat-input-placeholder 
+{
+  /* color: #fff; */
+  font-size: 5em;
+  padding: 0 12px;
+}
+.mat-focused .mat-form-field-label 
+{
+    /* color: green !important; */
+  font-size: 20px;
+} 
+.btn
+{
+  width: 140px;
+  font-size: 25px;
+  padding: 12px 28px;
+  border-radius: 8px;
+}
+.btn:hover
+{
+  opacity: 0.8;
+  color: black;
+}
+.btn1
+{
+  background-color: red;
+}
+.btnn 
+{
+  width: 300px;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  margin: 3px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+  
+input:hover,
+.btnn:hover 
+{
+  opacity: 1;
+}
+.google 
+{
+  background-color: #dd4b39;
+  color: white;
+}
+.fb 
+{
+  background-color: #3B5998;
+  color: white;
+}
+.or
+{
+  margin-left: 90px;
+  font-size: 20px;
+}
+.example-form 
+{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.example-full-width
+{
+    width: 75%;
+}

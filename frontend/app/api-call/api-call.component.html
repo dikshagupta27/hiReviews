@@ -1,0 +1,74 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<body>
+ <div class="container1">
+  <img src="../../assets/images/dreamjob3.jpg" class="imgpost">
+  
+</div>
+<div class="container2">
+  <b>Apply Now!</b>  
+</div> 
+
+
+<div class="apicall">
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let info of information | async">
+      <div class="card">
+        <div class="card-body">
+          <h3><b>Company Name:</b>&nbsp;&nbsp;{{info.companyName}}</h3>
+          <h3><b>Website:</b>&nbsp;&nbsp;<a href="#">{{info.companyWebsite}}</a></h3>
+          
+          <h3><b>Email-Id:</b>&nbsp;&nbsp;{{info.email}}</h3>
+          <h3><b>Job Title:</b>&nbsp;&nbsp;{{info.jobTitle}} </h3>
+          <h3><b>Location:</b>&nbsp;&nbsp;{{info.jobLocation}}</h3>
+          <h3><b>Stipend:</b>&nbsp;&nbsp;{{info.stipend}}/Month </h3>
+          <h3> <b>Package:</b>&nbsp;&nbsp;{{info.salary}}/Year</h3>
+          <div class="form-group">
+            <a mat-raised-button class="btn"
+              routerLink="."type="submit" color="accent" name="submit_reg" 
+              value="apply" (click)="registerProcess(registerForm)">Apply</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+</body>
+<!-- <div class="apicall">
+  
+   
+  <div  *ngFor="let info1 of information | async">
+    
+    <br><br>
+        
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title class="title">
+              <h3><b>  {{info1.name}}</b></h3>
+             
+
+              
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+          
+            <h3><b>About us:</b>&nbsp;&nbsp;</h3><h4>{{info1.aboutus}}</h4><br>
+            <h3><b>Skills:</b>&nbsp;&nbsp;{{info1.skills}}</h3>
+            <h3><b>Type:</b>&nbsp;&nbsp;{{info1.type}}</h3>
+            <h3><b>Experience:</b>&nbsp;&nbsp;{{info1.exp}}</h3>
+            <h3><b>benef:</b>&nbsp;&nbsp;{{info1.benef}}</h3>
+            <h3><b>post:</b>&nbsp;&nbsp;{{info1.post}}</h3>
+            <h3><b>industry:</b>&nbsp;&nbsp;{{info1.industry}}</h3>
+            <h3><b>rate:</b>&nbsp;&nbsp;{{info1.rate}}</h3>
+            <h3><b>website:</b>&nbsp;&nbsp;<a href="#">{{info1.website}}</a></h3>
+            <h3><b>email:</b>&nbsp;&nbsp;{{info1.email}}</h3>
+            <h3><b>loc:</b>&nbsp;&nbsp;{{info1.loc}}</h3>
+            <a mat-raised-button class="btn"
+              routerLink="."type="submit" color="accent" name="submit_reg" 
+              value="apply" (click)="registerProcess(registerForm)">Apply</a>
+          </mat-expansion-panel>
+       
+        </div></div>
+
+
+</body> -->

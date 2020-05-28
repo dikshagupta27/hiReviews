@@ -1,0 +1,184 @@
+<div class="container">
+    <form  class="example-form" (ngSubmit)="searchProcess(searchbar)" #searchbar="ngForm">
+        <fieldset>
+
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                <mat-label>Enter Job Location</mat-label>
+                  <input #searchbar matInput  placeholder="jobLocation" 
+                    searchbar="ngModel"  ngModel name ="searchbar"   class="input1" >
+                    
+                  <mat-error *ngIf="searchbar.invalid">Please enter.</mat-error>
+                </mat-form-field>
+                
+              <div class="form-group">
+                <a mat-raised-button class="btn"
+                  routerLink="." type="submit" color="accent" name="submit_reg" 
+                  value="Submit" (click) = "search(searchbar.value)">Submit</a>
+              </div>
+              
+        </fieldset>
+    </form>
+</div>
+
+<div class="apicall">
+  <div  *ngFor="let info of jobs ">
+      <div class="card">
+        <div class="card-body">
+          <h3><b>Company Name:</b>&nbsp;&nbsp;{{info.companyName}}
+          
+          </h3>
+          <h3><b>Website:</b>&nbsp;&nbsp;<a href="#">{{info.companyWebsite}}</a></h3>
+         
+          <h3><b>Email-Id:</b>&nbsp;&nbsp;{{info.email}}</h3>
+          <h3><b>Job Title:</b>&nbsp;&nbsp;{{info.jobTitle}} 
+          </h3>
+          <h3><b>Location:</b>&nbsp;&nbsp;{{info.jobLocation}}</h3>
+          <h3><b>Stipend:</b>&nbsp;&nbsp;{{info.stipend}}/Month </h3>
+          <h3> <b>Package:</b>&nbsp;&nbsp;{{info.salary}}/Year</h3>
+          
+     
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+
+
+
+
+
+<!-- 
+
+
+
+
+
+
+<div class="apicall">
+  <div *ngFor="let info1 of jobs ">
+
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <h3><b>  {{info1.name}}</b></h3>
+
+                  
+                 
+                </mat-expansion-panel-header>
+              
+
+                              <mat-tab-group>
+                                <mat-tab class="infoo">
+                                  <ng-template mat-tab-label>
+                                    About
+                                  </ng-template>
+                <h3><b>About Us:</b>&nbsp;&nbsp;{{info1.aboutus}}</h3>
+                <h3><b>Type:</b>&nbsp;&nbsp;{{info1.type}}</h3>
+                <h3><b>Industry:</b>&nbsp;&nbsp;{{info1.industry}}</h3>
+                <h3><b>Website:</b>&nbsp;&nbsp;<a href="#">{{info1.website}}</a></h3>
+                <h3><b>Email:</b>&nbsp;&nbsp;{{info1.email}}</h3>
+                <h3><b>Location:</b>&nbsp;&nbsp;{{info1.loc}}</h3>
+                <h3><b>Rating:</b>&nbsp;&nbsp;{{info1.rate}}</h3>
+
+                                  </mat-tab>
+                                  
+                                  <mat-tab class="infoo">
+                                    <ng-template mat-tab-label>
+                                    skills
+                                  </ng-template>
+                                  <h3><b>Skills:</b>&nbsp;&nbsp;{{info1.skills}}</h3>
+                                </mat-tab>
+                                <mat-tab class="infoo">
+                                  <ng-template mat-tab-label>
+                                      job profiles
+                                    </ng-template>
+                                    <h3>{{info1.post}}</h3>
+                                  </mat-tab>
+                                  <mat-tab class="infoo">
+                                    <ng-template mat-tab-label>
+                                   benefits
+                                    </ng-template>
+                                
+                                    <h3>{{info1.benef}}</h3>
+                                  </mat-tab>
+                                  <mat-tab class="infoo">
+                                    <ng-template mat-tab-label>
+                               Experience
+                                    </ng-template>
+                                
+                                    <h3>{{info1.exp}}</h3>
+                                  </mat-tab>
+                                  <mat-tab class="infoo">
+                                    <ng-template mat-tab-label>
+                                    reviews
+                                  </ng-template>
+                              
+                                  <mat-card>
+                                    
+                                    <div>
+                                      <br><br>
+                                      <p *ngIf="tasks.length<=0">You are the first one to review! </p>
+                                      <br><br>
+                                      <ul class="list-group">
+                                        <li *ngFor="let task of tasks" class="list-group-item">
+                                            <span> {{ task.name }} </span>
+                                        </li>
+                                    </ul>
+                                      <div class="row">
+                                          <div class="col-xs-6 col-md-4">
+                                              <div >
+                                                  <mat-form-field >
+                                                    <mat-label>Review</mat-label>
+                                                    <textarea matInput placeholder="write your review" rows="7" [(ngModel)]="task"></textarea>
+                                                  </mat-form-field>
+                                    <br><br>
+                                                  <div >
+                                                  
+                                                    &nbsp;&nbsp;&nbsp;
+                                                      <button mat-raised-button class="btn btn-primary" color="accent" (click)="onClick()">Submit
+                                          </button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div> <br /></div> </mat-tab>
+                              </mat-tab-group>
+
+              </mat-expansion-panel> 
+              <mat-tab class="infoo">
+                <ng-template mat-tab-label>
+        Interview Questions
+                </ng-template>
+                <div>
+                  <br><br>
+                  <p *ngIf="tasks1.length<=0">You are the first one to share. </p>
+                  <br><br>
+                  <ul class="list-group">
+                    <li *ngFor="let task1 of tasks1" class="list-group-item">
+                        <span> {{ task1.name }} </span>
+                    </li>
+                </ul>
+                  <div class="row">
+                      <div class="col-xs-6 col-md-4">
+                          <div >
+                              <mat-form-field >
+                                <mat-label>Question</mat-label>
+                                <textarea matInput placeholder="write your question" rows="7" [(ngModel)]="task1"></textarea>
+                              </mat-form-field>
+                <br><br>
+                              <div >
+                              
+                                &nbsp;&nbsp;&nbsp;
+                                  <button mat-raised-button class="btn btn-primary" color="accent" (click)="onClick1()">Submit
+                      </button>
+                              </div>
+                          </div>
+                      </div>
+                  </div> <br /></div> 
+                
+              </mat-tab>
+             
+            </div></div>
+            -->
+       
+
+ 

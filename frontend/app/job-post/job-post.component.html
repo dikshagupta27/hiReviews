@@ -1,0 +1,191 @@
+
+  <!-- <p>job-post works!</p> -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<div class="container1">
+    <img src="../../assets/images/jobpost1.jpg" class="imgpost">
+   
+    <div class="textpost1"><b>Find the right people, Faster. </b>
+    </div>
+    <div class="textpost2">
+      <a class="active1" routerLink="/about-us" routerLinkActive="active" >About Us</a>
+    
+      <a class="active" routerLink="/applyJob" routerLinkActive="active">Apply Now</a>
+    </div>
+    
+    <div class="textpost"><b>
+        We're Here to make
+        <br>
+        Your Hire
+        <br>
+        Successful !!</b>
+    </div>
+</div>
+
+<div class="container2">
+   <b>Post A Job !</b>  
+</div>
+
+<!-- form  -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <form class="example-form" (ngSubmit)="onRegister(registerForm)" #registerForm="ngForm">
+          <fieldset>
+            <p class="hrtag">Company Details</p>
+            <hr>
+
+            <!-- companyName -->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                <mat-label>Company Name</mat-label>
+                  <input matInput  placeholder="Please enter " minlength="3" maxlength="100" required
+                    #companyName="ngModel" ngModel name="companyName" class="input1">
+                  <mat-error *ngIf="companyName.invalid">Please enter a valid title.</mat-error>
+            </mat-form-field>
+
+            <!-- companyDescription -->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                <mat-label>Company Description</mat-label>
+                <textarea matInput placeholder="about compnay" required
+                #companyDescription="ngModel" ngModel name="companyDescription"></textarea>
+                <mat-error *ngIf="companyDescription.invalid">Please enter</mat-error>
+            </mat-form-field>
+
+            <!-- email -->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent"[style.fontSize.px]=20>
+              <mat-label>Email Id</mat-label>
+                <input matInput placeholder="Please enter a valid email" type="text"
+                  required
+                  email #email="ngModel" ngModel name="email">
+              <mat-error *ngIf="email.invalid">Please enter a valid email.</mat-error>
+            </mat-form-field> 
+
+            <!-- companyWebsite -->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                <mat-label>Company Website</mat-label>
+                  <input matInput  placeholder="https:// " required
+                    #companyWebsite="ngModel" ngModel name="companyWebsite" class="input1">
+                  <mat-error *ngIf="companyWebsite.invalid">Please enter.</mat-error>
+            </mat-form-field>
+
+            <!-- fbUsername-->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                <mat-label>Facebook Username</mat-label>
+                  <input matInput  placeholder="username " required
+                    #fbUsername="ngModel" ngModel name="fbUsername" class="input1">
+                  <mat-error *ngIf="fbUsername.invalid">Please enter.</mat-error>
+            </mat-form-field>
+
+             <!-- ldUsername-->
+             <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                <mat-label>LinkedIn Username</mat-label>
+                  <input matInput  placeholder="username " required
+                    #ldUsername="ngModel" ngModel name="ldUsername" class="input1">
+                  <mat-error *ngIf="ldUsername.invalid">Please enter.</mat-error>
+            </mat-form-field>
+
+
+            <!-- skills-->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+              <mat-label>Enter skills</mat-label>
+                <input matInput  placeholder="skills" required
+                  #skills="ngModel" ngModel name="skills" class="input1">
+                <mat-error *ngIf="skills.invalid">Please enter.</mat-error>
+            </mat-form-field>
+
+             <!-- rate-->
+             <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+              <mat-label>Enter Rating</mat-label>
+                <input matInput  placeholder="rating" required
+                  #rate="ngModel" ngModel name="rate" class="input1">
+                <mat-error *ngIf="rate.invalid">Please enter.</mat-error>
+            </mat-form-field>
+
+            <!-- benefits-->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+              <mat-label>Enter benefits</mat-label>
+                <input matInput  placeholder="benefits" required
+                  #benefits="ngModel" ngModel name="benefits" class="input1">
+                <mat-error *ngIf="benefits.invalid">Please enter.</mat-error>
+            </mat-form-field>
+
+            <!-- experience-->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+              <mat-label>Enter experience</mat-label>
+                <input matInput  placeholder=" experience" required
+                  #experience="ngModel" ngModel name="experience" class="input1">
+                <mat-error *ngIf="experience.invalid">Please enter.</mat-error>
+            </mat-form-field>
+            
+
+            <p class="hrtag">Job Details</p>
+            <hr>
+           
+            <!-- jobTitle -->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+              <mat-label>Job Title</mat-label>
+                <input matInput  placeholder="Please enter " minlength="3" maxlength="25" required
+                  #jobTitle="ngModel" ngModel name="jobTitle" class="input1">
+                <mat-error *ngIf="jobTitle.invalid">Please enter a valid title.</mat-error>
+            </mat-form-field>
+
+            <!-- jobType -->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+              <mat-label>Job Type</mat-label>
+              <input matInput placeholder="Full Time/Part Time"   required
+                 #jobType="ngModel" ngModel name="jobType">
+              <mat-error *ngIf="jobType.invalid">Please enter a valid jobType.</mat-error>
+            </mat-form-field>
+
+            <!-- jobDescription -->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+                <mat-label>Job Description</mat-label>
+                <textarea matInput placeholder="about job" required
+                #jobDescription="ngModel" ngModel name="jobDescription"></textarea>
+                <mat-error *ngIf="jobDescription.invalid">Please enter</mat-error>
+            </mat-form-field>
+
+            <!-- jobLocation-->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+              <mat-label>Enter Job Location</mat-label>
+                <input matInput  placeholder="jobLocation" required
+                  #jobLocation="ngModel" ngModel name="jobLocation" class="input1">
+                <mat-error *ngIf="jobLocation.invalid">Please enter.</mat-error>
+            </mat-form-field>
+
+            <!-- stipend-->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+              <mat-label>Enter Stipend</mat-label>
+                <input matInput  placeholder="stipend" required
+                  #stipend="ngModel" ngModel name="stipend" class="input1">
+                <mat-error *ngIf="stipend.invalid">Please enter.</mat-error>
+            </mat-form-field>
+            
+            <!-- salary-->
+            <mat-form-field appearance="outline" class="example-full-width"  color="accent" [style.fontSize.px]=20>
+              <mat-label>Enter package</mat-label>
+                <input matInput  placeholder="package" required
+                  #salary="ngModel" ngModel name="salary" class="input1">
+              <mat-error *ngIf="salary.invalid">Please enter.</mat-error>
+            </mat-form-field>
+
+             
+            <!-- submit button-->
+            <div class="form-group">
+                <a mat-raised-button class="btn"
+                  routerLink="."type="submit" color="accent" name="submit_reg" 
+                  value="Submit" (click)="registerProcess(registerForm)">Submit</a>
+              </div>
+            
+            
+            
+          </fieldset>
+        </form><!-- ends register form --> <!-- second for to fiter user-->
+      </div><!-- ends col-6 -->
+    </div>
+</div>
+
+

@@ -1,0 +1,136 @@
+.container1
+{
+    text-align: center;
+    width: 100%;
+    height: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    color: white;
+}
+.container2
+{
+    color: black;
+    margin-top: 45px;
+    margin-left: 40px;
+    font-size: 50px;
+}
+.imgpost
+{
+    margin-top: 0px;
+    margin-left: 0px;
+    height: 700px;
+    width: 100%;
+}
+.textpost
+{
+    position: absolute;
+    top: 220px;
+    /* right: 16px; */
+    margin-left: 1150px;
+    font-size: 50px;
+    transition: transform .2s;
+}
+.textpost:hover 
+{
+    transform: scale(1.2); 
+    text-decoration: underline;
+}
+.textpost1
+{
+    position: absolute;
+    top: 50px;
+    margin-left: 80px;
+    transition: transform .2s;
+    font-size: 40px;
+}
+.textpost2
+{
+    position: absolute;
+    top: 40px;
+    margin-left: 85%;
+    transition: transform .2s;
+    font-size: 40px;
+}
+/* form 
+*/
+.container
+{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 45px;
+    padding-bottom: 2100px;
+    height: 100px;
+}
+.example-form 
+{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.example-full-width
+{
+    width: 200%;
+}
+.hrtag
+{
+    font-size: 40px;
+}
+.btn
+{
+    width: 140px;
+    font-size: 25px;
+    padding: 12px 28px;
+    border-radius: 8px;
+}
+.btn:hover
+{
+    opacity: 0.8;
+    color: black;
+}
+/* body
+{
+    /* background-image: url("../../assets/images/bg1.jpg"); */
+    /* background-color: beige; */
+    /* margin-top: 800px; */
+    /* width: 100%;
+    height: 100%;
+    background-repeat: no-repeat; */
+/* } */ 
+.topnav
+ {
+  overflow: hidden;
+  background-color:RoyalBlue;
+  
+  height: 70px;
+  padding: 12px;
+  opacity: 0.9;
+  margin-top: 0px;
+  
+}
+
+ a {
+  float: right;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+
+  /*border: 1px;
+  border-color: white;*/
+}
+ a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+ a.active {
+  background-color:#ddd;
+  color:Black;
+}
+a.active1 {
+    background-color:#ddd;
+    color:Black;
+    margin-left: 6px;
+  }

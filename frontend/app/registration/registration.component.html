@@ -1,0 +1,94 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form class="my-form" (ngSubmit)="onRegister(registerForm)" #registerForm="ngForm">
+        <fieldset>
+          <div>
+            <img src="../../assets/images/signupp.PNG" class="imgg">
+          </div>
+            <br>
+            <br>
+          <mat-form-field class="example-full-width"  color="accent" [style.fontSize.px]=20>
+            <mat-label>First Name</mat-label>
+              <input matInput  placeholder="Please enter a valid  name" minlength="3" maxlength="25" required
+                #firstName="ngModel" ngModel name="firstName" class="input1">
+              <mat-error *ngIf="firstName.invalid">Please enter a valid name.</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width"  color="accent" [style.fontSize.px]=20>
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Please enter a valid last name" minlength="3" maxlength="20"  required
+               #lastName="ngModel" ngModel name="lastName">
+            <mat-error *ngIf="lastName.invalid">Please enter a valid last name.</mat-error>
+          </mat-form-field>
+            <br>
+          <mat-form-field class="example-full-width"  color="accent"[style.fontSize.px]=20>
+            <mat-label>Email Id</mat-label>
+            <input matInput placeholder="Please enter a valid email"type="text"
+              required
+              email
+              #email="ngModel" ngModel name="email">
+            <mat-error *ngIf="email.invalid">Please enter a valid email.</mat-error>
+          </mat-form-field>     
+          <br>
+          <mat-form-field class="example-full-width"  color="accent" [style.fontSize.px]=20>
+            <mat-label>Contact</mat-label>
+              <input type="number" matInput placeholder="Please enter a valid contact number" minlength="10" maxlength="10"
+                required
+                #contact="ngModel" ngModel name="contact">
+              <mat-error *ngIf="contact.invalid">Please enter a valid mobile number.</mat-error>
+              <span matPrefix>+91 &nbsp;</span>
+          </mat-form-field>     
+            <br>
+          <mat-form-field class="example-full-width"  color="accent" [style.fontSize.px]=20>
+            <mat-label>Password</mat-label >
+            <!-- <input matInput placeholder="enter a password" min="6" required [type]="hide ? 'password' : 'text'"> -->
+            <input type="password" matInput placeholder="Password" minlength="8" ngModel name="password" #password="ngModel"  required showHideInput >
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="password.invalid">Please enter password.</mat-error>
+          </mat-form-field>     
+          <br>
+          <mat-form-field class="example-full-width" color="accent" [style.fontSize.px]=20>
+            <mat-label>Location</mat-label>
+            <input matInput placeholder=" Please enter your current locaion"
+              required
+              #location="ngModel" ngModel name="location">
+            <mat-error *ngIf="location.invalid">Please Enter a valid location.</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="example-full-width"  color="accent" [style.fontSize.px]=20>
+            <mat-label>Experience</mat-label>
+            <select matNativeControl required>
+              <option value="f">Fresher</option>
+              <option value="1y">1 Year</option>
+              <option value="2y">2 Years</option>
+              <option value="3y">3 Years</option>
+            </select>
+          </mat-form-field>
+            <br><br>
+          <mat-label>Upload CV</mat-label>
+          <input type="file" change="OnFileSelected($event)"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- <button mat-raised-button type="button" (click)="OnUpload()" >Upload CV</button> -->
+              <br>        
+          <div class="form-group">
+            <a mat-raised-button class="btn"
+              routerLink="."type="submit" color="accent" name="submit_reg" 
+              routerLink="/about-us" routerLinkActive="active"
+              value="Register" (click)="registerProcess(registerForm)">Register</a>
+          </div>
+        </fieldset>
+      </form><!-- ends register form --> <!-- second for to fiter user-->
+    </div><!-- ends col-6 -->
+    <div class="signup-image">
+      <figure><img src="../../assets/images/signup-image.jpg " alt="sing up image" class="img2"></figure>
+        <!-- <img src="../../assets/images/memberr.PNG "class="signup-image-link"> -->
+        <br> <a href="#" routerLink="/loginn" routerLinkActive="active" class="signup-image-link">I am already a member</a>
+    </div>
+  </div>
+</div>

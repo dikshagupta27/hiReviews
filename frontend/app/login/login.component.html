@@ -1,0 +1,68 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form class="example-form" (ngSubmit)="LoginProcess(loginForm)" #loginForm="ngForm">
+        <fieldset>
+          <div>
+            <img src="../../assets/images/login.JPG" class="imgg">    
+          </div>
+            <br>
+            <br>
+          <div class="form-group">
+              <button class="btn-social-icon btn-google google btnn " (click)="signInWithGoogle()">
+                <span ><i class="fa fa-google fa-fw"></i> Login with Google</span>
+              </button>
+                <br>
+              <button class=" btn-social-icon btn-facebook fb btnn" (click)="signInWithFB()">
+                <span ><i class="fa fa-facebook fa-fw"></i> Login with Facebook</span>
+              </button>
+                <br>
+          </div>
+          <P class="or"><b>OR</b></P>
+                  
+          <mat-form-field class="example-full-width"  color="primary" [style.fontSize.px]=20>
+            <mat-label>Email Id</mat-label>
+              <input matInput placeholder="Please enter a valid email" type="text"
+                required
+                email
+                #email="ngModel" ngModel name="email">
+              <mat-error *ngIf="email.invalid">Please enter a valid email.</mat-error>
+          </mat-form-field>     
+          <br>
+          <br>
+          <mat-form-field class="example-full-width"  color="primary" [style.fontSize.px]=20>
+            <mat-label>Password</mat-label >
+              <input type="password" matInput placeholder="Enter password"
+                 minlength="8" ngModel name="password" 
+                 #password="ngModel" required showHideInput>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="password.invalid">Please enter password.</mat-error>
+          </mat-form-field>  
+
+
+          <mat-card-actions>
+            <button mat-raised-button type="submit" color="primary" 
+            (click) = "onLogin(loginForm)" class="btn" routerLink="/about-us" routerLinkActive="active">Login</button>
+            
+        </mat-card-actions>
+          <br>
+                  
+        </fieldset>
+      </form><!-- ends register form --> <!-- second for to fiter user-->
+      <a href="#" routerLink="/registration" routerLinkActive="active"
+      class="signup-image-link">Create an account.</a>
+    </div><!-- ends col-6 -->
+        
+    <div class="signup-image">
+     <figure><img src="../../assets/images/signin-image.jpg " alt="sing in image" class="img2"></figure>
+      <!-- <img src="../../assets/images/memberr.PNG "class="signup-image-link"> -->
+      <br> 
+    </div>
+  </div>
+</div>
